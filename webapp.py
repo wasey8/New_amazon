@@ -51,8 +51,8 @@ def convert():
 
     
 #-----------------For all Amazon categories ---------!
-@app.route("/data/<int:page_no>",methods=['POST'])
-def data(page_no):
+@app.route("/amazon/<int:page_no>",methods=['POST'])
+def amazon(page_no):
     url = request.form.get('url')
     headers=user_agents()
     headers={'User-Agent': headers}
