@@ -6,6 +6,7 @@ import json
 from werkzeug.exceptions import HTTPException
 import random
 
+
 app = Flask(__name__)
 
 @app.errorhandler(HTTPException)
@@ -50,8 +51,8 @@ def convert():
 
     
 #-----------------For all Amazon categories ---------!
-@app.route("/amazon/<int:page_no>",methods=['POST'])
-def amazon(page_no):
+@app.route("/data/<int:page_no>",methods=['POST'])
+def data(page_no):
     headers=user_agents()
     headers={'User-Agent': headers}
     url = request.form.get('url')
