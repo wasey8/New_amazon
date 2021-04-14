@@ -53,9 +53,10 @@ def convert():
 #-----------------For all Amazon categories ---------!
 @app.route("/data/<int:page_no>",methods=['POST'])
 def data(page_no):
+    url = request.form.get('url')
     headers=user_agents()
     headers={'User-Agent': headers}
-    url = request.form.get('url')
+    #url = request.form.get('url')
     rate=convert() #currency conversion rate
     url1=url+str("&page={page}".format(page=page_no))
     str1=url1.find("11995849031")
