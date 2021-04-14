@@ -113,7 +113,7 @@ def amazon(page_no):
         link=i.find("a",{"class","a-link-normal s-no-outline"})
         link=str("https://www.amazon.ae"+link['href'])
         r = requests.get(link, headers=headers)
-        soup=BeautifulSoup(r.content,"lxml")
+        soup=BeautifulSoup(r.content,'html.parser')
         for i in soup.find_all("ul",{"class":"a-unordered-list a-vertical a-spacing-mini"}) :
             info=i.text
         for i in soup.find_all("table",{"class":"a-spacing-micro"}):
@@ -181,4 +181,5 @@ def amazon(page_no):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
